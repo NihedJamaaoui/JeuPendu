@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.net.URL?>
+<?import javafx.scene.shape.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controllers.RegisterController"
+           prefWidth="400" prefHeight="400"
+           styleClass="hangman-bg">
+
+    <stylesheets>
+        <URL value="@../resources/styles.css" />
+    </stylesheets>
+
+    <!-- Main content container -->
+    <VBox alignment="CENTER" spacing="20" styleClass="hangman-content-box">
+        <!-- Animated hangman logo -->
+        <VBox alignment="CENTER" spacing="5" styleClass="logo-container">
+            <ImageView fx:id="logoImageView" fitWidth="120" fitHeight="120" preserveRatio="true" styleClass="hangman-logo">
+                <Image url="@../resources/Images/hangman-icon.png" />
+            </ImageView>
+            <Text text="INSCRIPTION" styleClass="game-title"/>
+            <Text text="Rejoignez le jeu" styleClass="game-subtitle"/>
+        </VBox>
+
+        <!-- Registration form with paper-like effect -->
+        <VBox alignment="CENTER" spacing="15" styleClass="hangman-form-container">
+            <!-- Username field -->
+            <VBox alignment="CENTER_LEFT" spacing="5" styleClass="input-wrapper">
+                <Label text="Nom d'utilisateur" styleClass="input-label"/>
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="input-container">
+                    <ImageView fitWidth="20" fitHeight="20" styleClass="input-icon">
+                        <Image url="@../resources/Images/user-icon.png" />
+                    </ImageView>
+                    <TextField fx:id="usernameField" promptText="Choisissez un pseudo" styleClass="hangman-field"/>
+                </HBox>
+            </VBox>
+
+            <!-- Password field -->
+            <VBox alignment="CENTER_LEFT" spacing="8" styleClass="input-wrapper">
+                <Label text="Mot de passe" styleClass="input-label"/>
+                <HBox alignment="CENTER_LEFT" spacing="8" styleClass="input-container">
+                    <ImageView fitWidth="16" fitHeight="16" styleClass="input-icon">
+                        <Image url="@../resources/Images/password-icon.png" />
+                    </ImageView>
+                    <PasswordField fx:id="passwordField" promptText="Créez un mot de passe" styleClass="hangman-field"/>
+                </HBox>
+            </VBox>
+
+            <!-- Confirm password field -->
+            <VBox alignment="CENTER_LEFT" spacing="8" styleClass="input-wrapper">
+                <Label text="Confirmer mot de passe" styleClass="input-label"/>
+                <HBox alignment="CENTER_LEFT" spacing="8" styleClass="input-container">
+                    <ImageView fitWidth="16" fitHeight="16" styleClass="input-icon">
+                        <Image url="@../resources/Images/password-icon.png" />
+                    </ImageView>
+                    <PasswordField fx:id="confirmPasswordField" promptText="Retapez votre mot de passe" styleClass="hangman-field"/>
+                </HBox>
+            </VBox>
+
+            <!-- Error message -->
+            <Label fx:id="errorLabel" styleClass="hangman-error-label" visible="false"/>
+
+            <!-- Register button -->
+            <Button text="S'INSCRIRE" onAction="#handleRegister" styleClass="hangman-register-button">
+                <graphic>
+                    <ImageView fitWidth="16" fitHeight="16" styleClass="button-icon">
+                        <Image url="@../resources/Images/login-arrow.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+        </VBox>
+
+        <!-- Footer with login link -->
+        <HBox alignment="CENTER" spacing="5" styleClass="footer-container">
+            <Label text="Déjà un compte?" styleClass="footer-label"/>
+            <Button text="Se connecter" onAction="#switchToLogin" styleClass="hangman-login-link-button"/>
+        </HBox>
+    </VBox>
+</StackPane>

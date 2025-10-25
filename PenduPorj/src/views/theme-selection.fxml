@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<?import java.net.URL?>
+
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ThemeSelectionController"
+      alignment="CENTER" spacing="20" styleClass="theme-selection-root"
+      prefWidth="700" prefHeight="600">
+
+    <stylesheets>
+        <URL value="@../resources/styles.css" />
+    </stylesheets>
+
+    <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+
+        <Button onAction="#handleBackToDifficulty" styleClass="back-button">
+            <graphic>
+                <ImageView fitWidth="30" fitHeight="30">
+                    <Image url="@../resources/Images/back-icon.jpg" />
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+            <Label fx:id="userInfoLabel" styleClass="user-info-label"/>
+            <Button onAction="#handleLogout" styleClass="logout-button">
+                <graphic>
+                    <ImageView fitWidth="20" fitHeight="20">
+                        <Image url="@../resources/Images/logout-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+    </HBox>
+
+    <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+        <Image url="@../resources/Images/themeicon.png" />
+    </ImageView>
+
+    <Label text="Choisissez un thème" styleClass="theme-title"/>
+
+
+    <GridPane fx:id="themeGrid" alignment="CENTER" hgap="20" vgap="20" styleClass="theme-grid">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="33"/>
+                <ColumnConstraints percentWidth="33"/>
+                <ColumnConstraints percentWidth="33"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="33"/>
+                <RowConstraints percentHeight="33"/>
+                <RowConstraints percentHeight="33"/>
+            </rowConstraints>
+
+            <!-- Row 1 -->
+            <Button fx:id="schoolButton" text="École" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="theme-button"/>
+            <Button fx:id="animalsButton" text="Animaux" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="theme-button"/>
+            <Button fx:id="jobsButton" text="Métiers" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="theme-button"/>
+
+            <!-- Row 2 -->
+            <Button fx:id="vehiclesButton" text="Véhicules" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="theme-button"/>
+            <Button fx:id="techButton" text="Technologie" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="theme-button"/>
+            <Button fx:id="bodyButton" text="Corps" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="theme-button"/>
+
+            <!-- Row 3 -->
+            <Button fx:id="countriesButton" text="Pays" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="theme-button"/>
+            <Button fx:id="fruitsButton" text="Fruits" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="theme-button"/>
+            <Button fx:id="sportsButton" text="Sports" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="theme-button"/>
+        </GridPane>
+
+
+</VBox>
