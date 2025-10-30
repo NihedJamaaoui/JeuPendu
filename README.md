@@ -4,16 +4,16 @@
 ## Overview  
 This project offers a modern version of the classic Hangman game, featuring user accounts, multiple difficulty levels, and coin-based rewards stored in a database.
 ## Features  
--User authentication and profile management
--Coin system for hints and avatar customization
--Timer and difficulty levels
--Real-time feedback and score tracking
--Data stored in MongoDB
+- User authentication and profile management
+- Coin system for hints and avatar customization
+- Timer and difficulty levels
+- Real-time feedback and score tracking
+- Data stored in MongoDB
 
 ## Technologies  
--Languages: Java, XML (FXML)
--Frameworks & Tools: JavaFX, Scene Builder, MongoDB
--Concepts: OOP, event-driven programming, GUI design
+- **Languages:** Java, XML (FXML)
+- **Frameworks** & Tools: JavaFX, Scene Builder, MongoDB
+- **Concepts:** OOP, event-driven programming, GUI design
 
 ## Author  
 **Nihed Jamaoui**  
